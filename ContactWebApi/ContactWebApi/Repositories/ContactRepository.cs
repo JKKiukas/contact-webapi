@@ -23,7 +23,7 @@ namespace ContactWebApi.Repositories
             return contact;
         }
 
-        public void Delete(int id)
+        public void Delete(long id)
         {
             var deleteContact = Read(id);
             _context.Remove(deleteContact);
@@ -36,7 +36,7 @@ namespace ContactWebApi.Repositories
             return _context.ContactTable.AsNoTracking().ToList();
         }
 
-        public ContactTable Read(int id)
+        public ContactTable Read(long id)
         {
             return _context.ContactTable.FirstOrDefault(c => c.Id == id);
         }

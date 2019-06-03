@@ -6,12 +6,12 @@ using ContactWebApi.Models;
 
 namespace ContactWebApi.Services
 {
-    interface IContactService
+    public interface IContactService
     {
         ContactTable CreateContact(ContactTable contact);
         List<ContactTable> ReadContact();
-        ContactTable ReadContact(int id);
-        ContactTable UpdateContact(int id, ContactTable contact);
-        void DeleteContact(int id);
+        ContactTable ReadContact(long id);
+        ContactTable UpdateContact(long id, ContactTable contact);
+        void DeleteContact(long id);
     }
 }

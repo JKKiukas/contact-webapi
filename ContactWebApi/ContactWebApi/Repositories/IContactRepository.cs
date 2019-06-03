@@ -10,8 +10,8 @@ namespace ContactWebApi.Repositories
     {
         ContactTable Create(ContactTable contact);
         List<ContactTable> Read();
-        ContactTable Read(int id);
+        ContactTable Read(long id);
         ContactTable Update(ContactTable contact);
-        void Delete(int id);
+        void Delete(long id);
     }
 }

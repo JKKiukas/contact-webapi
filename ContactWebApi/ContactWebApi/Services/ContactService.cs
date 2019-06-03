@@ -21,7 +21,7 @@ namespace ContactWebApi.Services
             return _contactRepository.Create(contact);
         }
 
-        public void DeleteContact(int id)
+        public void DeleteContact(long id)
         {
             _contactRepository.Delete(id);
         }
@@ -31,12 +31,12 @@ namespace ContactWebApi.Services
             return _contactRepository.Read();
         }
 
-        public ContactTable ReadContact(int id)
+        public ContactTable ReadContact(long id)
         {
             return _contactRepository.Read(id);
         }
 
-        public ContactTable UpdateContact(int id, ContactTable contact)
+        public ContactTable UpdateContact(long id, ContactTable contact)
         {
             var updateContact = _contactRepository.Read(id);
             if (updateContact == null)
