@@ -16,7 +16,7 @@ namespace ContactWebApi.Services
             _contactRepository = contactRepository;
         }
 
-        public ContactTable CreateContact(ContactTable contact)
+        public Contact CreateContact(Contact contact)
         {
             return _contactRepository.Create(contact);
         }
@@ -26,17 +26,17 @@ namespace ContactWebApi.Services
             _contactRepository.Delete(id);
         }
 
-        public List<ContactTable> ReadContact()
+        public List<Contact> ReadContact()
         {
             return _contactRepository.Read();
         }
 
-        public ContactTable ReadContact(long id)
+        public Contact ReadContact(long id)
         {
             return _contactRepository.Read(id);
         }
 
-        public ContactTable UpdateContact(long id, ContactTable contact)
+        public Contact UpdateContact(long id, Contact contact)
         {
             var updateContact = _contactRepository.Read(id);
             if (updateContact == null)
@@ -50,7 +50,7 @@ namespace ContactWebApi.Services
             }
         }
 
-        public ContactTable UpdateContact(ContactTable contact)
+        public Contact UpdateContact(Contact contact)
         {
             throw new NotImplementedException();
         }

@@ -16,7 +16,7 @@ namespace ContactWebApi.Repositories
             _context = context;
         }
 
-        public ContactTable Create(ContactTable contact)
+        public Contact Create(Contact contact)
         {
             _context.Add(contact);
             _context.SaveChanges();
@@ -31,17 +31,17 @@ namespace ContactWebApi.Repositories
             return;
         }
 
-        public List<ContactTable> Read()
+        public List<Contact> Read()
         {
-            return _context.ContactTable.AsNoTracking().ToList();
+            return _context.Contact.AsNoTracking().ToList();
         }
 
-        public ContactTable Read(long id)
+        public Contact Read(long id)
         {
-            return _context.ContactTable.FirstOrDefault(c => c.Id == id);
+            return _context.Contact.FirstOrDefault(c => c.Id == id);
         }
 
-        public ContactTable Update(ContactTable contact)
+        public Contact Update(Contact contact)
         {
             _context.Update(contact);
             _context.SaveChanges();

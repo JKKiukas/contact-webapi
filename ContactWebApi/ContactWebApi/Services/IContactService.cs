@@ -8,10 +8,10 @@ namespace ContactWebApi.Services
 {
     public interface IContactService
     {
-        ContactTable CreateContact(ContactTable contact);
-        List<ContactTable> ReadContact();
-        ContactTable ReadContact(long id);
-        ContactTable UpdateContact(long id, ContactTable contact);
+        Contact CreateContact(Contact contact);
+        List<Contact> ReadContact();
+        Contact ReadContact(long id);
+        Contact UpdateContact(long id, Contact contact);
         void DeleteContact(long id);
     }
 }

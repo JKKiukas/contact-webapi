@@ -15,7 +15,7 @@ namespace ContactWebApi.Models
         {
         }
 
-        public virtual DbSet<ContactTable> ContactTable { get; set; }
+        public virtual DbSet<Contact> Contact { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,10 +30,10 @@ namespace ContactWebApi.Models
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.0-rtm-35687");
 
-            modelBuilder.Entity<ContactTable>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
+            //modelBuilder.Entity<Contact>(entity =>
+            //{
+            //    entity.Property(e => e.Id).ValueGeneratedNever();
+            //});
 
             OnModelCreatingPartial(modelBuilder);
         }
