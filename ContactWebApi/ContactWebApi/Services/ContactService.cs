@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ContactWebApi.Models;
 using ContactWebApi.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContactWebApi.Services
 {
@@ -21,9 +22,16 @@ namespace ContactWebApi.Services
             return _contactRepository.Create(contact);
         }
 
-        public void DeleteContact(long id)
+        public StatusCodeResult DeleteContact(long id)
         {
-            _contactRepository.Delete(id);
+            var deleteContact = _contactRepository.Read(id);
+
+            if(deleteContact == null)
+            {
+                return new NotFoundResult();
+            }
+
+            return _contactRepository.Delete(id);
         }
 
         public List<Contact> ReadContact()
